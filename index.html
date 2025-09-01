@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Concept Story</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black;
+      min-height: 100vh;
+      background: black;
       color: white;
-      font-family: 'Courier New', monospace;
+      display: grid;
+      place-items: center;
+      font-family: "Courier New", monospace;
+    }
+
+    .stage {
+      display: grid;
+      gap: 40px;
+      justify-items: center;
+    }
+
+   /* this is just gonna be the flicker text for now ig */
+    .tagline {
       font-size: 2em;
-    }
-
-    .flicker {
       animation: flicker 2s infinite;
+      text-align: center;
+      user-select: none;
     }
-
     @keyframes flicker {
       0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
       19%, 21%, 24%, 56% { opacity: 0; }
     }
+
+    /* "hands! (HANDS!) of time will wring my neck" */
+    .hand {
+      width: 300px; /* may adjust */
+      height: auto;
+      transition: filter .25s ease, transform .25s ease;
+      cursor: pointer;
+    }
+    .hand:hover {
+      filter:
+        drop-shadow(0 0 6px rgba(255,255,255,.9))
+        drop-shadow(0 0 18px rgba(255,255,255,.5))
+        drop-shadow(0 0 36px rgba(255,255,255,.35));
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
-  <div class="flicker">
-    you will know who we are
-  </div>
+  <main class="stage">
+    <div class="tagline">you will know who we are</div>
+
+    <!-- just a test PNG -->
+    <img src="images/testhandforopening.png"
+         alt="test hand"
+         class="hand"
+         onclick="enterSite()">
+  </main>
+
+  <script>
+    function enterSite() {
+      // for the love of god pls dont forget to replace actual png here
+      window.location.href = "enter.html";
+    }
+  </script>
 </body>
 </html>
