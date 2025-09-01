@@ -17,17 +17,17 @@
     }
 
     .flicker {
-      animation; flicer 2s infinite;
+      animation: flicker 2s infinite;
     }
+
     @keyframes flicker {
-      0%, 18%, 22%, 25%, 53%, 57%, 100%
-{opacity: 1; }
-      19%, 21%, 24%, 56% {opacity: 0;}
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+      19%, 21%, 24%, 56% { opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <div>
+  <div class="flicker">
     you will know who we are
   </div>
 </body>
